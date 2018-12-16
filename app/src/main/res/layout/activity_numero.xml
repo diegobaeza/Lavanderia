@@ -39,7 +39,8 @@
         app:layout_constraintStart_toEndOf="@+id/tvIniNumero"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         android:textColorHint="@color/white"
-        android:hint="@string/ingrese_numero"/>
+        android:hint="@string/ingrese_numero"
+        android:defaultFocusHighlightEnabled="true"/>
 
     <TextView
         android:id="@+id/tvIniNumero"

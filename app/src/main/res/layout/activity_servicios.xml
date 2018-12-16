@@ -28,10 +28,13 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="52dp"
         android:layout_marginEnd="60dp"
-        android:text="Servicio 1"
+        android:text="@string/servicio_1"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/colorPrimaryDark"
         app:layout_constraintEnd_toStartOf="@+id/btnServicio2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitServicios" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTitServicios"
+        />
 
     <Button
         android:id="@+id/btnServicio2"
@@ -40,7 +43,9 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="52dp"
         android:layout_marginEnd="60dp"
-        android:text="Servicio 2"
+        android:text="@string/servicio_2"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnServicio1"
         app:layout_constraintTop_toBottomOf="@+id/tvTitServicios" />
@@ -52,7 +57,9 @@
         android:layout_marginStart="45dp"
         android:layout_marginTop="26dp"
         android:layout_marginEnd="45dp"
-        android:text="Servicio 3"
+        android:text="@string/servicio_3"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/colorPrimaryDark"
         app:layout_constraintEnd_toStartOf="@+id/btnServicio4"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,7 +72,9 @@
         android:layout_marginStart="45dp"
         android:layout_marginTop="26dp"
         android:layout_marginEnd="45dp"
-        android:text="Servicio 4"
+        android:text="@string/servicio_4"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnServicio3"
         app:layout_constraintTop_toBottomOf="@+id/btnServicio2" />

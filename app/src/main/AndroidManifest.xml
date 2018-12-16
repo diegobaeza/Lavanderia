@@ -18,7 +18,19 @@
         </activity>
 
         <activity android:name=".vista.ServiciosActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.PICK_ACTIVITY" />
 
+                <category android:name="android.intent.category.SELECTED_ALTERNATIVE" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".vista.MejoraActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.PICK_ACTIVITY" />
+
+                <category android:name="android.intent.category.SELECTED_ALTERNATIVE" />
+            </intent-filter>
         </activity>
     </application>
 

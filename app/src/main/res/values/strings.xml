@@ -1,8 +1,16 @@
 <resources>
     <string name="app_name">Lavanderia</string>
-    <string name="indicacion_numero">Ingrese su numero, se le enviara un codigo de verificacion:</string>
+    <string name="indicacion_numero">Ingrese su numero, se le enviara un <b>SMS</b> con su codigo:</string>
     <string name="ini_569">+569</string>
     <string name="enviar">Enviar</string>
-    <string name="tit_servicios">Escoje un servicio:</string>
+    <string name="tit_servicios">Escoja un servicio:</string>
     <string name="ingrese_numero">Ingrese su numero</string>
+    <string name="mejoras_servicio">Mejoras de servicio:</string>
+    <string name="mejora_1">Mejora 1</string>
+    <string name="mejora_2">Mejora 2</string>
+    <string name="sin_complemento">Sin Mejora</string>
+    <string name="servicio_1">Servicio 1</string>
+    <string name="servicio_2">Servicio 2</string>
+    <string name="servicio_3">Servicio 3</string>
+    <string name="servicio_4">Servicio 4</string>
 </resources>
