@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Lavanderia</string>
+    <string name="indicacion_numero">Ingrese su numero, se le enviara un codigo de verificacion:</string>
+    <string name="ini_569">+569</string>
+    <string name="enviar">Enviar</string>
+    <string name="tit_servicios">Escoje un servicio:</string>
+    <string name="ingrese_numero">Ingrese su numero</string>
 </resources>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:id="@+id/tvTitServicios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="91dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="91dp"
+        android:text="@string/tit_servicios"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnServicio1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="60dp"
+        android:text="Servicio 1"
+        app:layout_constraintEnd_toStartOf="@+id/btnServicio2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitServicios" />
+
+    <Button
+        android:id="@+id/btnServicio2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="60dp"
+        android:text="Servicio 2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnServicio1"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitServicios" />
+
+    <Button
+        android:id="@+id/btnServicio3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="45dp"
+        android:text="Servicio 3"
+        app:layout_constraintEnd_toStartOf="@+id/btnServicio4"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnServicio1" />
+
+    <Button
+        android:id="@+id/btnServicio4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="45dp"
+        android:text="Servicio 4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnServicio3"
+        app:layout_constraintTop_toBottomOf="@+id/btnServicio2" />
+</android.support.constraint.ConstraintLayout>

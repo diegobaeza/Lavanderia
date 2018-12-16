@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".vista.NumeroActivity"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="14dp"
+        android:ems="12"
+        android:text="@string/indicacion_numero"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etTelefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="38dp"
+        android:backgroundTint="@color/white"
+        android:ems="8"
+        android:inputType="phone"
+        android:textColor="@color/white"
+        android:textSize="27sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvIniNumero"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:textColorHint="@color/white"
+        android:hint="@string/ingrese_numero"/>
+
+    <TextView
+        android:id="@+id/tvIniNumero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="23dp"
+        android:text="@string/ini_569"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toStartOf="@+id/etTelefono"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:textStyle="bold"
+        />
+
+    <Button
+        android:id="@+id/btnEnviar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginBottom="100dp"
+        android:text="@string/enviar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        android:ems="5"
+        />
+</android.support.constraint.ConstraintLayout>
