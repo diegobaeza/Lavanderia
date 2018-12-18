@@ -2,7 +2,7 @@
     <string name="app_name">Lavanderia</string>
     <string name="indicacion_numero">Ingrese su numero, se le enviara un <b>SMS</b> con su codigo:</string>
     <string name="ini_569">+569</string>
-    <string name="enviar">Enviar</string>
+    <string name="verificar">Verificar</string>
     <string name="tit_servicios">Escoja un servicio:</string>
     <string name="ingrese_numero">Ingrese su numero</string>
     <string name="mejoras_servicio">Mejoras de servicio:</string>
@@ -13,4 +13,18 @@
     <string name="servicio_2">Servicio 2</string>
     <string name="servicio_3">Servicio 3</string>
     <string name="servicio_4">Servicio 4</string>
+    <string name="API_KEY_GOOGLE">AIzaSyBgtP2yRhYlEZYqwW_VMOS9rRkwD-yWFno</string>
+    <string name="titUbicacion">Lugar de retiro y entrega</string>
+    <string name="direccion">Direccion:</string>
+    <string name="ingrese_direccion">Ingrese su direccion</string>
+    <string name="seleccione_ubicacion">Seleccione una ubicacion</string>
+    <string name="continuar">Continuar</string>
+    <string name="seleccione_horario">Seleccione un Horario:</string>
+    <string name="horario_1">08:00 &#8211; 12:00</string>
+    <string name="horario_2">12:00 &#8211; 17:00</string>
+    <string name="horario_3">17:00 &#8211; 22:00</string>
+    <string name="total">Total:</string>
+    <string name="confirmar_servicio">Confirmar servicio</string>
+    <string name="codigo">Codigo:</string>
+    <string name="enviar_codigo">Enviar Codigo</string>
 </resources>

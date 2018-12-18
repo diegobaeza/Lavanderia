@@ -1,5 +1,6 @@
 package cl.baeza.diego.lavanderia.vista;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -36,13 +37,28 @@ public class MejoraActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
 
         if(v == mejora1){
-            // your stuff
+
+            Intent i = new Intent(MejoraActivity.this, UbicacionActivity.class);
+            i.putExtra("servicio" , getIntent().getExtras().getString("servicio"));
+            i.putExtra("mejora" , "mejora1");
+            startActivity(i);
+
         }
         else if(v == mejora2){
-            // your stuff
+
+            Intent i = new Intent(MejoraActivity.this, UbicacionActivity.class);
+            i.putExtra("servicio" , getIntent().getExtras().getString("servicio"));
+            i.putExtra("mejora" , "mejora2");
+            startActivity(i);
+
         }
         else if(v == sinMejora){
-            // your stuff
+
+            Intent i = new Intent(MejoraActivity.this, UbicacionActivity.class);
+            i.putExtra("servicio" , getIntent().getExtras().getString("servicio"));
+            i.putExtra("mejora" , "sinmejora");
+            startActivity(i);
+
         }
     }
 }

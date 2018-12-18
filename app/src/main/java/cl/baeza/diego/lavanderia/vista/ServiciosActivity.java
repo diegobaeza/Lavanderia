@@ -39,18 +39,22 @@ public class ServiciosActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         if(v == btnServicio1){
             Intent i = new Intent(this, MejoraActivity.class);
+            i.putExtra("servicio" , "servicio_1");
             startActivity(i);
         }
         else if(v == btnServicio2){
             Intent i = new Intent(this, MejoraActivity.class);
+            i.putExtra("servicio" , "servicio_2");
             startActivity(i);
         }
         else if(v == btnServicio3){
             Intent i = new Intent(this, MejoraActivity.class);
+            i.putExtra("servicio" , "servicio_3");
             startActivity(i);
         }
         else if(v == btnServicio4){
             Intent i = new Intent(this, MejoraActivity.class);
+            i.putExtra("servicio" , "servicio_4");
             startActivity(i);
         }
     }

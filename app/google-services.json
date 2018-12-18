@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "793159103590",
+    "firebase_url": "https://lavanderia-f4781.firebaseio.com",
+    "project_id": "lavanderia-f4781",
+    "storage_bucket": "lavanderia-f4781.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:793159103590:android:9073be7ca86b5b28",
+        "android_client_info": {
+          "package_name": "cl.baeza.diego.lavanderia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "793159103590-oq3pik8ld48f96ihavvqc7ntqulpcu06.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cl.baeza.diego.lavanderia",
+            "certificate_hash": "85b0eb7dc61a6c13c62950d1d4bf738bc9b6b5a7"
+          }
+        },
+        {
+          "client_id": "793159103590-iketunageost99c4mcs0jitktqme3nre.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaHcvhkKtubDLcv0txTELQmvC87GhpHMU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "793159103590-iketunageost99c4mcs0jitktqme3nre.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
