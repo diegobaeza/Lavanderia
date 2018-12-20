@@ -27,11 +27,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="49dp"
-        android:layout_marginBottom="59dp"
         android:backgroundTint="@color/colorPrimaryDark"
         android:text="@string/mejora_1"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/btnSinMejora"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvMejoraServ" />
 
@@ -41,25 +39,47 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="49dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="59dp"
         android:backgroundTint="@color/colorPrimaryDark"
         android:text="@string/mejora_2"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/btnSinMejora"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvMejoraServ" />
 
     <Button
-        android:id="@+id/btnSinMejora"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnContinuar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="115dp"
-        android:layout_marginEnd="115dp"
-        android:layout_marginBottom="198dp"
-        android:text="@string/sin_complemento"
-        android:textColor="@color/white"
         android:backgroundTint="@color/colorPrimaryDark"
+        android:text="@string/continuar_sm"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAgregado1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/agregado"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMejora1" />
+
+    <TextView
+        android:id="@+id/tvAgregado2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="61dp"
+        android:text="@string/agregado"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMejora2" />
+
 </android.support.constraint.ConstraintLayout>

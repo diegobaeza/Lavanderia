@@ -6,28 +6,40 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import cl.baeza.diego.lavanderia.R;
 
 public class MejoraActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    private Button mejora1;
-    private Button mejora2;
-    private Button sinMejora;
+    Button btnMejora1;
+    Button btnMejora2;
+    Button btnContinuar;
+    TextView tvAgregado1;
+    TextView tvAgregado2;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mejora);
 
-        mejora1 = findViewById(R.id.btnMejora1);
-        mejora2 = findViewById(R.id.btnMejora2);
-        sinMejora = findViewById(R.id.btnSinMejora);
+        btnMejora1 = findViewById(R.id.btnMejora1);
+        btnMejora2 = findViewById(R.id.btnMejora2);
+        btnContinuar = findViewById(R.id.btnContinuar);
+        tvAgregado1 = findViewById(R.id.tvAgregado1);
+        tvAgregado2 = findViewById(R.id.tvAgregado2);
 
-        mejora1.setOnClickListener(this);
-        mejora2.setOnClickListener(this);
-        sinMejora.setOnClickListener(this);
+        tvAgregado1.setVisibility(View.INVISIBLE);
+        tvAgregado2.setVisibility(View.INVISIBLE);
+
+        btnMejora1.setOnClickListener(this);
+        btnMejora2.setOnClickListener(this);
+        btnContinuar.setOnClickListener(this);
+
+
+
+
 
     }
 
@@ -36,27 +48,66 @@ public class MejoraActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
 
-        if(v == mejora1){
+        if(v == btnMejora1){
 
-            Intent i = new Intent(MejoraActivity.this, UbicacionActivity.class);
-            i.putExtra("servicio" , getIntent().getExtras().getString("servicio"));
-            i.putExtra("mejora" , "mejora1");
-            startActivity(i);
+            if(tvAgregado1.getVisibility() == View.INVISIBLE){
+                tvAgregado1.setVisibility(View.VISIBLE);
+
+                if(tvAgregado1.getVisibility() == View.VISIBLE || tvAgregado2.getVisibility() == View.VISIBLE){
+                    btnContinuar.setText(R.string.continuar);
+                }
+
+            }else{
+                tvAgregado1.setVisibility(View.INVISIBLE);
+
+                if(tvAgregado1.getVisibility() == View.INVISIBLE && tvAgregado2.getVisibility() == View.INVISIBLE){
+                    btnContinuar.setText(R.string.continuar_sm);
+                }
+            }
+
 
         }
-        else if(v == mejora2){
+        else if(v == btnMejora2){
 
-            Intent i = new Intent(MejoraActivity.this, UbicacionActivity.class);
-            i.putExtra("servicio" , getIntent().getExtras().getString("servicio"));
-            i.putExtra("mejora" , "mejora2");
-            startActivity(i);
+            if(tvAgregado2.getVisibility() == View.INVISIBLE){
+                tvAgregado2.setVisibility(View.VISIBLE);
+
+                if(tvAgregado1.getVisibility() == View.VISIBLE || tvAgregado2.getVisibility() == View.VISIBLE){
+                    btnContinuar.setText(R.string.continuar);
+                }
+
+            }else{
+                tvAgregado2.setVisibility(View.INVISIBLE);
+
+                if(tvAgregado1.getVisibility() == View.INVISIBLE && tvAgregado2.getVisibility() == View.INVISIBLE){
+                    btnContinuar.setText(R.string.continuar_sm);
+                }
+            }
+
 
         }
-        else if(v == sinMejora){
+        else if(v == btnContinuar){
 
+            //Arreglar paso de datos
             Intent i = new Intent(MejoraActivity.this, UbicacionActivity.class);
             i.putExtra("servicio" , getIntent().getExtras().getString("servicio"));
-            i.putExtra("mejora" , "sinmejora");
+
+            if(tvAgregado1.getVisibility() == View.VISIBLE && tvAgregado2.getVisibility() == View.INVISIBLE){
+                i.putExtra("mejora","Mejora 1");
+            }
+            else if(tvAgregado1.getVisibility() == View.INVISIBLE && tvAgregado2.getVisibility() == View.VISIBLE){
+                i.putExtra("mejora","Mejora 2");
+            }
+            else if(tvAgregado1.getVisibility() == View.VISIBLE && tvAgregado2.getVisibility() == View.VISIBLE){
+                i.putExtra("mejora","Mejora 1 y Mejora 2");
+            }
+            else if(tvAgregado1.getVisibility() == View.INVISIBLE && tvAgregado2.getVisibility() == View.INVISIBLE){
+                i.putExtra("mejora", "Sin Mejora");
+            }
+
+
+
+
             startActivity(i);
 
         }

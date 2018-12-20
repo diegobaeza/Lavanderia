@@ -192,11 +192,10 @@ public class NumeroActivity extends AppCompatActivity implements View.OnClickLis
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
 
-                            FirebaseUser user = task.getResult().getUser();
 
 
                             Intent i = new Intent(NumeroActivity.this, ServiciosActivity.class);
-                            String telefono = "+569" + etTelefono.getText().toString();
+                            String telefono = "+569 " + etTelefono.getText().toString();
 
                             ConexionSQLiteHelper conn = new ConexionSQLiteHelper(NumeroActivity.this,"usuarios",null,1);
                             SQLiteDatabase db = conn.getWritableDatabase();

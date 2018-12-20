@@ -1,6 +1,5 @@
 package cl.baeza.diego.lavanderia.vista;
 
-import android.arch.lifecycle.ViewModelStoreOwner;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -57,7 +56,7 @@ public class UbicacionActivity extends AppCompatActivity implements View.OnClick
         }
         else if(v == btnContinuar){
             if(etDireccion.getText().length() > 0){
-                Intent i = new Intent(UbicacionActivity.this, ConfirmacionActivity.class);
+                Intent i = new Intent(UbicacionActivity.this, HorarioActivity.class);
                 i.putExtra("servicio" , getIntent().getExtras().getString("servicio"));
                 i.putExtra("mejora" , getIntent().getExtras().getString("mejora"));
                 i.putExtra("ubicacion" , etDireccion.getText().toString());

@@ -41,9 +41,33 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".vista.ConfirmacionActivity">
+        <activity android:name=".vista.HorarioActivity">
             <intent-filter>
                 <action android:name="android.intent.action.CHOOSER" />
+
+                <category android:name="android.intent.category.INFO" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".vista.PagoActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.CHOOSER" />
+
+                <category android:name="android.intent.category.INFO" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".vista.DetalleActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.INFO" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".vista.GraciasActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.INFO" />
             </intent-filter>
