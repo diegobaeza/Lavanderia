@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".vista.NumeroActivity">
+        <activity android:name=".vista.InicioActivity"
+                android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,7 +18,17 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".vista.ServiciosActivity">
+        <activity android:name=".vista.NumeroActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".vista.ServiciosActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.PICK_ACTIVITY" />
 
@@ -25,7 +36,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".vista.MejoraActivity">
+        <activity android:name=".vista.MejoraActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.PICK_ACTIVITY" />
 
@@ -33,7 +45,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".vista.UbicacionActivity">
+        <activity android:name=".vista.UbicacionActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.PICK_ACTIVITY" />
 
@@ -41,7 +54,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".vista.HorarioActivity">
+        <activity android:name=".vista.HorarioActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.CHOOSER" />
 
@@ -49,7 +63,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".vista.PagoActivity">
+        <activity android:name=".vista.PagoActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.CHOOSER" />
 
@@ -57,7 +72,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".vista.DetalleActivity">
+        <activity android:name=".vista.DetalleActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -65,7 +81,36 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".vista.GraciasActivity">
+        <activity android:name=".vista.GraciasActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.INFO" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".vista.AgregarDireccionActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.INFO" />
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name=".vista.NombreActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.INFO" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".vista.AgregarNombreActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 

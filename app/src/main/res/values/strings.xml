@@ -15,7 +15,7 @@
     <string name="API_KEY_GOOGLE">AIzaSyBgtP2yRhYlEZYqwW_VMOS9rRkwD-yWFno</string>
     <string name="titUbicacion">Lugar de retiro y entrega</string>
     <string name="ingrese_direccion">Ingrese su direccion</string>
-    <string name="seleccione_ubicacion">Seleccione una ubicacion</string>
+    <string name="seleccione_ubicacion">Seleccione desde un Mapa</string>
     <string name="continuar">Continuar</string>
     <string name="continuar_sm">Continuar sin mejora</string>
     <string name="seleccione_horario">Seleccione un Horario:</string>
@@ -37,9 +37,22 @@
     <string name="telefono">Telefono:</string>
     <string name="servicio">Servicio:</string>
     <string name="mejora">Mejora:</string>
-    <string name="direccion">Direccion:</string>
+    <string name="direccion">Direcciones:</string>
     <string name="horario">Horario:</string>
     <string name="tipo_de_pago">Tipo de Pago:</string>
     <string name="solicitar_servicio">Solicitar servicio</string>
     <string name="nombre">Nombre:</string>
+    <string name="comuna">Comuna</string>
+    <string name="calle">Calle</string>
+    <string name="casa">Casa</string>
+    <string name="departamento">Departamento</string>
+    <string name="numero">Numero</string>
+    <string name="nro_departamento">Nro. Departamento</string>
+    <string name="listo">Listo</string>
+    <string name="ingrese_nombre">Ingrese un nombre</string>
+    <string name="entrar">Entrar</string>
+    <string name="titulo_nombre">¿Quien nos recibira?</string>
+    <string name="nombres">Nombres:</string>
+    <string name="no_se_ha_agregado_ningun_nombre">No se ha agregado ningun nombre</string>
+    <string name="no_ha_agregado_ninguna_direccion">No ha agregado ninguna direccion</string>
 </resources>

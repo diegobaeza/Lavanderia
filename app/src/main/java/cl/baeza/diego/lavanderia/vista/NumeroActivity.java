@@ -197,14 +197,16 @@ public class NumeroActivity extends AppCompatActivity implements View.OnClickLis
                             Intent i = new Intent(NumeroActivity.this, ServiciosActivity.class);
                             String telefono = "+569 " + etTelefono.getText().toString();
 
-                            ConexionSQLiteHelper conn = new ConexionSQLiteHelper(NumeroActivity.this,"usuarios",null,1);
+                            ConexionSQLiteHelper conn = new ConexionSQLiteHelper(NumeroActivity.this,Utilidades.NOMBRE_BD,null,1);
                             SQLiteDatabase db = conn.getWritableDatabase();
 
                             ContentValues values = new ContentValues();
                             values.put(Utilidades.CAMPO_ID,1);
                             values.put(Utilidades.CAMPO_TELEFONO,telefono);
 
+
                             db.insert(Utilidades.TABLA_USUARIO,Utilidades.CAMPO_ID,values);
+
 
                             startActivity(i);
 

@@ -36,6 +36,7 @@ public class PagoActivity extends AppCompatActivity implements View.OnClickListe
             Intent i = new Intent(PagoActivity.this, DetalleActivity.class);
             i.putExtra("servicio",getIntent().getExtras().getString("servicio"));
             i.putExtra("mejora",getIntent().getExtras().getString("mejora"));
+            i.putExtra("nombre",getIntent().getExtras().getString("nombre"));
             i.putExtra("direccion", getIntent().getExtras().getString("direccion"));
             i.putExtra("horario", getIntent().getExtras().getString("horario"));
             i.putExtra("tipoPago","Efectivo");
@@ -46,6 +47,7 @@ public class PagoActivity extends AppCompatActivity implements View.OnClickListe
             Intent i = new Intent(PagoActivity.this, DetalleActivity.class);
             i.putExtra("servicio",getIntent().getExtras().getString("servicio"));
             i.putExtra("mejora",getIntent().getExtras().getString("mejora"));
+            i.putExtra("nombre",getIntent().getExtras().getString("nombre"));
             i.putExtra("direccion", getIntent().getExtras().getString("direccion"));
             i.putExtra("horario", getIntent().getExtras().getString("horario"));
             i.putExtra("tipoPago","Credito");
@@ -56,6 +58,7 @@ public class PagoActivity extends AppCompatActivity implements View.OnClickListe
             Intent i = new Intent(PagoActivity.this, DetalleActivity.class);
             i.putExtra("servicio",getIntent().getExtras().getString("servicio"));
             i.putExtra("mejora",getIntent().getExtras().getString("mejora"));
+            i.putExtra("nombre",getIntent().getExtras().getString("nombre"));
             i.putExtra("direccion", getIntent().getExtras().getString("direccion"));
             i.putExtra("horario", getIntent().getExtras().getString("horario"));
             i.putExtra("tipoPago","Debito");

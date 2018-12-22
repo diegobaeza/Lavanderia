@@ -36,6 +36,8 @@ public class HorarioActivity extends AppCompatActivity implements View.OnClickLi
         rbHorario2 = findViewById(R.id.rbHorario2);
         rbHorario3 = findViewById(R.id.rbHorario3);
 
+        rbHorario1.setChecked(true);
+
         btnConfirmar.setOnClickListener(this);
 
     }
@@ -61,6 +63,7 @@ public class HorarioActivity extends AppCompatActivity implements View.OnClickLi
             Intent i = new Intent(HorarioActivity.this, PagoActivity.class);
             i.putExtra("servicio",getIntent().getExtras().getString("servicio"));
             i.putExtra("mejora",getIntent().getExtras().getString("mejora"));
+            i.putExtra("nombre", getIntent().getExtras().getString("nombre"));
             i.putExtra("direccion", getIntent().getExtras().getString("ubicacion"));
             i.putExtra("horario", horario);
             startActivity(i);

@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import cl.baeza.diego.lavanderia.R;
+import cl.baeza.diego.lavanderia.modelo.Nombre;
 
 public class MejoraActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -89,8 +90,9 @@ public class MejoraActivity extends AppCompatActivity implements View.OnClickLis
         else if(v == btnContinuar){
 
             //Arreglar paso de datos
-            Intent i = new Intent(MejoraActivity.this, UbicacionActivity.class);
+            Intent i = new Intent(MejoraActivity.this, NombreActivity.class);
             i.putExtra("servicio" , getIntent().getExtras().getString("servicio"));
+
 
             if(tvAgregado1.getVisibility() == View.VISIBLE && tvAgregado2.getVisibility() == View.INVISIBLE){
                 i.putExtra("mejora","Mejora 1");

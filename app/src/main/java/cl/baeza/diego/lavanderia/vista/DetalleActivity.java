@@ -57,7 +57,7 @@ public class DetalleActivity extends AppCompatActivity implements View.OnClickLi
 
     public void cargarDatos(){
 
-        ConexionSQLiteHelper conn = new ConexionSQLiteHelper(DetalleActivity.this,"usuarios",null,1);
+        ConexionSQLiteHelper conn = new ConexionSQLiteHelper(DetalleActivity.this,Utilidades.NOMBRE_BD,null,Utilidades.VERSION_BD);
         SQLiteDatabase db = conn.getReadableDatabase();
 
         String[] parametros = {"1"};
@@ -66,7 +66,7 @@ public class DetalleActivity extends AppCompatActivity implements View.OnClickLi
         Cursor cursor = db.query(Utilidades.TABLA_USUARIO, campos, Utilidades.CAMPO_ID + "=?",parametros,null,null,null);
         cursor.moveToFirst();
 
-        tvNombre.setText("");
+        tvNombre.setText(getIntent().getExtras().getString("nombre"));
         tvTelefono.setText(cursor.getString(0));
         tvServicio.setText(getIntent().getExtras().getString("servicio"));
         tvMejora.setText(getIntent().getExtras().getString("mejora"));
@@ -97,7 +97,7 @@ public class DetalleActivity extends AppCompatActivity implements View.OnClickLi
             Cursor cursor = db.query(Utilidades.TABLA_USUARIO, campos, Utilidades.CAMPO_ID + "=?",parametros,null,null,null);
             cursor.moveToFirst();
 
-            String mensaje = "Nombre: "+ "" +
+            String mensaje = "Nombre: "+ getIntent().getExtras().getString("nombre") +
                     "\n\nTelefono: " + cursor.getString(0) +
                     "\n\nServicio: " + getIntent().getExtras().getString("servicio") +
                     "\n\nMejora: " + getIntent().getExtras().getString("mejora") +
@@ -123,7 +123,7 @@ public class DetalleActivity extends AppCompatActivity implements View.OnClickLi
                         enviado = m.send();
                     }catch(Exception e) {
                         Toast.makeText(DetalleActivity.this, "Hubo problemas enviado el Email", Toast.LENGTH_LONG).show();
-                        Log.e("HorarioActivity", "No se pudo enviar el Email", e);
+                        Log.e("DetalleActivity", "No se pudo enviar el Email", e);
                     }
 
                     runOnUiThread(new Runnable() {
