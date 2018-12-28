@@ -6,16 +6,17 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import cl.baeza.diego.lavanderia.R;
 
 
 public class ServiciosActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btnServicio1;
-    private Button btnServicio2;
-    private Button btnServicio3;
-    private Button btnServicio4;
+    private ImageButton btnServicio1;
+    private ImageButton btnServicio2;
+    private ImageButton btnServicio3;
+    private ImageButton btnServicio4;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,22 +40,22 @@ public class ServiciosActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         if(v == btnServicio1){
             Intent i = new Intent(this, MejoraActivity.class);
-            i.putExtra("servicio" , "servicio_1");
+            i.putExtra("servicio" , "Servicio 1");
             startActivity(i);
         }
         else if(v == btnServicio2){
             Intent i = new Intent(this, MejoraActivity.class);
-            i.putExtra("servicio" , "servicio_2");
+            i.putExtra("servicio" , "Servicio 2");
             startActivity(i);
         }
         else if(v == btnServicio3){
             Intent i = new Intent(this, MejoraActivity.class);
-            i.putExtra("servicio" , "servicio_3");
+            i.putExtra("servicio" , "Servicio 3");
             startActivity(i);
         }
         else if(v == btnServicio4){
             Intent i = new Intent(this, MejoraActivity.class);
-            i.putExtra("servicio" , "servicio_4");
+            i.putExtra("servicio" , "Servicio 4");
             startActivity(i);
         }
     }

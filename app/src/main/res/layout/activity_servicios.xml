@@ -21,60 +21,59 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnServicio1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginTop="52dp"
-        android:layout_marginEnd="60dp"
-        android:text="@string/servicio_1"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:src="@drawable/ic_serv1"
         android:textColor="@color/white"
-        android:backgroundTint="@color/colorPrimaryDark"
         app:layout_constraintEnd_toStartOf="@+id/btnServicio2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitServicios"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/tvTitServicios" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnServicio2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="52dp"
         android:layout_marginEnd="60dp"
-        android:text="@string/servicio_2"
+        android:backgroundTint="@color/colorPrimary"
+        android:src="@drawable/ic_serv2"
         android:textColor="@color/white"
-        android:backgroundTint="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnServicio1"
         app:layout_constraintTop_toBottomOf="@+id/tvTitServicios" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnServicio3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="45dp"
-        android:text="@string/servicio_3"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:src="@drawable/ic_serv3"
         android:textColor="@color/white"
-        android:backgroundTint="@color/colorPrimaryDark"
         app:layout_constraintEnd_toStartOf="@+id/btnServicio4"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnServicio1" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnServicio4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="26dp"
-        android:layout_marginEnd="45dp"
-        android:text="@string/servicio_4"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:src="@drawable/ic_serv4"
         android:textColor="@color/white"
-        android:backgroundTint="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnServicio3"
         app:layout_constraintTop_toBottomOf="@+id/btnServicio2" />

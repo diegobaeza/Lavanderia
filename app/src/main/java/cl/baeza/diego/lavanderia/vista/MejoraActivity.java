@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import cl.baeza.diego.lavanderia.R;
@@ -14,8 +15,8 @@ import cl.baeza.diego.lavanderia.modelo.Nombre;
 public class MejoraActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    Button btnMejora1;
-    Button btnMejora2;
+    ImageButton btnMejora1;
+    ImageButton btnMejora2;
     Button btnContinuar;
     TextView tvAgregado1;
     TextView tvAgregado2;

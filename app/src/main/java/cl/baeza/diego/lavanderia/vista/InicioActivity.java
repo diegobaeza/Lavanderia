@@ -29,7 +29,7 @@ public class InicioActivity extends AppCompatActivity implements View.OnClickLis
 
         btnEntrar.setOnClickListener(this);
 
-        Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.video_prueba);
+        Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.video_prueba1);
         vvInicio.setVideoURI(uri);
         vvInicio.start();
 
