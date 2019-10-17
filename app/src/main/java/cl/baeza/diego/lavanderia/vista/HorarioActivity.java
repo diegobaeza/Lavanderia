@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import cl.baeza.diego.lavanderia.R;
 import cl.baeza.diego.lavanderia.controlador.Mail;
@@ -40,6 +41,7 @@ public class HorarioActivity extends AppCompatActivity implements View.OnClickLi
 
         btnConfirmar.setOnClickListener(this);
 
+
     }
 
 
@@ -60,12 +62,17 @@ public class HorarioActivity extends AppCompatActivity implements View.OnClickLi
                 horario = rbHorario3.getText().toString();
             }
 
-            Intent i = new Intent(HorarioActivity.this, PagoActivity.class);
+            Intent i = new Intent(HorarioActivity.this, MejoraActivity.class);
             i.putExtra("servicio",getIntent().getExtras().getString("servicio"));
-            i.putExtra("mejora",getIntent().getExtras().getString("mejora"));
+            //i.putExtra("mejora",getIntent().getExtras().getString("mejora"));
             i.putExtra("nombre", getIntent().getExtras().getString("nombre"));
+
+
             i.putExtra("direccion", getIntent().getExtras().getString("ubicacion"));
             i.putExtra("horario", horario);
+
+
+            Toast.makeText(this, getIntent().getExtras().getString("ubicacion"), Toast.LENGTH_LONG).show();
             startActivity(i);
 
 

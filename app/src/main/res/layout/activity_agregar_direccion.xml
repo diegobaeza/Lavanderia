@@ -5,114 +5,158 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary">
+    android:background="@color/grisClaro">
 
-    <EditText
-        android:id="@+id/etComuna"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="85dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="84dp"
-        android:backgroundTint="@color/white"
-        android:ems="10"
-        android:hint="@string/comuna"
-        android:inputType="textPersonName"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/etDireccion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="85dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="84dp"
-        android:backgroundTint="@color/white"
-        android:ems="10"
-        android:hint="@string/calle"
-        android:inputType="textPersonName"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etComuna" />
-
-    <RadioGroup
-        android:id="@+id/rgTipoVivienda"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="131dp"
-        android:layout_marginTop="29dp"
-        android:layout_marginEnd="131dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDireccion">
-
-        <RadioButton
-            android:id="@+id/rbCasa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:checked="false"
-            android:text="@string/casa"
-            android:textColor="@color/white" />
-
-        <RadioButton
-            android:id="@+id/rbDepartamento"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/departamento"
-            android:textColor="@color/white" />
-
-    </RadioGroup>
-
-    <EditText
-        android:id="@+id/etNumero"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="85dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="84dp"
-        android:backgroundTint="@color/white"
-        android:ems="10"
-        android:hint="@string/numero"
-        android:inputType="number"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rgTipoVivienda" />
-
-    <EditText
-        android:id="@+id/etNroDepto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="85dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="84dp"
-        android:backgroundTint="@color/white"
-        android:ems="10"
-        android:hint="@string/nro_departamento"
-        android:inputType="number"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etNumero" />
-
-    <Button
-        android:id="@+id/btnListo"
+    <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/background_action_bar"
+        android:id="@+id/toolbar"
+        android:elevation="20dp"
+        android:layout_centerHorizontal="true"
+        >
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/ic_logo"
+            android:layout_gravity="center"/>
+
+
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/containerDireccion"
+        android:layout_width="239dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:text="@string/listo"
-        android:textColor="@color/white"
-        android:textStyle="bold"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/background_degraded"
+        android:elevation="10dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.3"
+        >
+
+        <EditText
+            android:id="@+id/etComuna"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:hint="@string/comuna"
+            android:fontFamily="sans-serif"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/containerDireccion" />
+
+        <EditText
+            android:id="@+id/etDireccion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:hint="@string/calle"
+            android:fontFamily="sans-serif"
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etComuna" />
+
+        <RadioGroup
+            android:id="@+id/rgTipoVivienda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etDireccion">
+
+            <RadioButton
+                android:id="@+id/rbCasa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:fontFamily="sans-serif"
+                android:text="@string/casa"
+                android:buttonTint="@color/white"
+                android:textColor="@color/white" />
+
+            <RadioButton
+                android:id="@+id/rbDepartamento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif"
+                android:text="@string/departamento"
+                android:buttonTint="@color/white"
+                android:textColor="@color/white" />
+
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/etNumero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:hint="@string/numero"
+            android:inputType="number"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rgTipoVivienda" />
+
+        <EditText
+            android:id="@+id/etNroDepto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:hint="@string/nro_departamento"
+            android:inputType="number"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etNumero" />
+
+        <Button
+            android:id="@+id/btnListo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="@string/anadir"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etNroDepto" />
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+
+
 
 </android.support.constraint.ConstraintLayout>

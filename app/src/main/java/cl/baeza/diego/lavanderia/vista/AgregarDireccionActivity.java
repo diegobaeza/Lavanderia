@@ -48,7 +48,7 @@ public class AgregarDireccionActivity extends AppCompatActivity implements View.
 
         rbCasa.setChecked(true);
 
-        etNroDepto.setVisibility(View.INVISIBLE);
+        etNroDepto.setVisibility(View.GONE);
 
         rbCasa.setOnClickListener(this);
         rbDepto.setOnClickListener(this);
@@ -69,12 +69,19 @@ public class AgregarDireccionActivity extends AppCompatActivity implements View.
             etDireccion.setText(direccionEditar.getDireccion());
             etNumero.setText(Integer.toString(direccionEditar.getNro_casa()));
         }
+
+        if(getIntent().getExtras().get("direccion") != null){
+            Direccion direccion = (Direccion) getIntent().getExtras().get("direccion");
+            etComuna.setText(direccion.getComuna());
+            etDireccion.setText(direccion.getDireccion());
+            etNumero.setText(Integer.toString(direccion.getNro_casa()));
+        }
     }
 
     @Override
     public void onClick(View v) {
         if(v == rbCasa){
-            etNroDepto.setVisibility(View.INVISIBLE);
+            etNroDepto.setVisibility(View.GONE);
         }
         else if(v == rbDepto){
             etNroDepto.setVisibility(View.VISIBLE);
@@ -143,6 +150,32 @@ public class AgregarDireccionActivity extends AppCompatActivity implements View.
 
 
             db.close();
+
+            if(getIntent().getExtras().get("direccion") != null){
+
+                String direccionCompleta;
+
+                if(etNroDepto.getText().length() > 0){
+                    direccionCompleta = etDireccion.getText()
+                            + " #" + etNumero.getText()
+                            + " Depto. " + etNroDepto.getText()
+                            + ", " + etComuna.getText();
+                }
+                else{
+                    direccionCompleta = etDireccion.getText()
+                            + " #" + etNumero.getText()
+                            + ", " + etComuna.getText();
+                }
+
+                Intent resultIntent = new Intent();
+                resultIntent.putExtra("resultado", direccionCompleta);
+                setResult(RESULT_OK, resultIntent);
+                finish();
+
+            }else{
+
+            }
+
             finish();
 
 

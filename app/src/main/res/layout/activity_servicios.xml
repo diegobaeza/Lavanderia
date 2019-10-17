@@ -1,80 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary">
+    android:background="@color/colorPrimary"
+    android:backgroundTint="@color/grisClaro">
+
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/background_action_bar"
+        android:id="@+id/toolbar"
+        android:elevation="20dp"
+        android:layout_centerHorizontal="true"
+        >
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/ic_logo"
+                android:layout_gravity="center"/>
+
+
+
+    </android.support.v7.widget.Toolbar>
 
     <TextView
         android:id="@+id/tvTitServicios"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="91dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="91dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="20dp"
+        android:layout_below="@id/toolbar"
         android:text="@string/tit_servicios"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="@color/colorPrimary"
+        android:textSize="25sp"/>
 
-    <ImageButton
-        android:id="@+id/btnServicio1"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="40dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:src="@drawable/ic_serv1"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toStartOf="@+id/btnServicio2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitServicios" />
+        android:layout_below="@id/tvTitServicios"
+        android:orientation="vertical"
+        android:layout_marginStart="50dp"
+        android:id="@+id/llServicio1"
 
-    <ImageButton
-        android:id="@+id/btnServicio2"
+        >
+
+        <ImageButton
+
+            android:id="@+id/btnServicio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_serv1"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:background="@drawable/background_button_primary"
+           />
+
+
+        <TextView
+            android:id="@+id/txtServicio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tit_servicios"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llServicio2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="60dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:src="@drawable/ic_serv2"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnServicio1"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitServicios" />
+        android:layout_below="@id/tvTitServicios"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="50dp">
 
-    <ImageButton
-        android:id="@+id/btnServicio3"
+
+        <ImageButton
+
+            android:id="@+id/btnServicio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_button_primary"
+            android:src="@drawable/ic_serv2"
+            android:textColor="@color/white"
+
+            android:layout_gravity="center"/>
+
+
+
+        <TextView
+            android:id="@+id/txtServicio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tit_servicios"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="40dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:src="@drawable/ic_serv3"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toStartOf="@+id/btnServicio4"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnServicio1" />
+        android:layout_below="@id/llServicio1"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        android:layout_marginStart="50dp"
+        android:id="@+id/llServicio3">
 
-    <ImageButton
-        android:id="@+id/btnServicio4"
+        <ImageButton
+            android:id="@+id/btnServicio3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_button_primary"
+            android:src="@drawable/ic_serv3"
+            android:layout_gravity="center"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/txtServicio3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tit_servicios"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="40dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:src="@drawable/ic_serv4"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnServicio3"
-        app:layout_constraintTop_toBottomOf="@+id/btnServicio2" />
-</android.support.constraint.ConstraintLayout>
+        android:layout_below="@id/llServicio2"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentEnd="true"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="50dp"
+        android:id="@+id/llServicio4">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_button_primary"
+            android:src="@drawable/ic_serv4"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:id="@+id/btnServicio4"/>
+
+        <TextView
+            android:id="@+id/txtServicio4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tit_servicios"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

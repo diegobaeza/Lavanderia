@@ -5,23 +5,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".vista.NumeroActivity"
-    android:background="@color/colorPrimary">
+    android:background="@color/grisClaro">
+
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/background_action_bar"
+        android:id="@+id/toolbar"
+        android:elevation="20dp"
+        android:layout_centerHorizontal="true"
+        >
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/ic_logo"
+            android:layout_gravity="center"/>
+
+
+
+    </android.support.v7.widget.Toolbar>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="14dp"
         android:ems="12"
         android:text="@string/indicacion_numero"
         android:textAlignment="center"
-        android:textColor="#ffffff"
+        android:textColor="@color/colorPrimary"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <EditText
         android:id="@+id/etTelefono"
@@ -29,16 +50,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="38dp"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/colorPrimary"
         android:ems="8"
         android:inputType="phone"
-        android:textColor="@color/white"
-        android:textSize="27sp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvIniNumero"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:textColorHint="@color/white"
+        android:textColorHint="@color/colorPrimary"
         android:hint="@string/ingrese_numero"
         android:defaultFocusHighlightEnabled="true"/>
 
@@ -47,75 +68,61 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="27dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="23dp"
         android:text="@string/ini_569"
-        android:textColor="@color/white"
+        android:textColor="@color/colorPrimary"
         android:textSize="25sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/etTelefono"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:textStyle="bold"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/btnVerificar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginEnd="148dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="60dp"
         android:backgroundTint="@color/colorPrimaryDark"
-        android:ems="6"
+
         android:text="@string/verificar"
         android:textColor="@color/white"
-        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.375"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnEnviarCodigo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="14dp"
-        android:layout_marginEnd="148dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/colorPrimaryDark"
         android:text="@string/enviar_codigo"
         android:textColor="@color/white"
-        android:backgroundTint="@color/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etTelefono" />
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginBottom="55dp"
-        android:text="@string/codigo"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btnVerificar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEnviarCodigo" />
 
     <EditText
         android:id="@+id/etCodigo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="35dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="44dp"
-        android:backgroundTint="@color/white"
-        android:ems="5"
+        android:layout_marginEnd="8dp"
+        android:hint="Ingrese su codigo"
         android:inputType="number"
-        android:textSize="24sp"
+        android:textColorHint="@color/colorPrimary"
+        android:backgroundTint="@color/colorPrimary"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnVerificar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnEnviarCodigo" />
 </android.support.constraint.ConstraintLayout>

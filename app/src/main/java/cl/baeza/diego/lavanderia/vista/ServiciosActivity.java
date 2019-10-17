@@ -3,6 +3,7 @@ package cl.baeza.diego.lavanderia.vista;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -29,6 +30,7 @@ public class ServiciosActivity extends AppCompatActivity implements View.OnClick
         btnServicio4 = findViewById(R.id.btnServicio4);
 
 
+
         btnServicio1.setOnClickListener(this);
         btnServicio2.setOnClickListener(this);
         btnServicio3.setOnClickListener(this);
@@ -39,22 +41,22 @@ public class ServiciosActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View v) {
         if(v == btnServicio1){
-            Intent i = new Intent(this, MejoraActivity.class);
+            Intent i = new Intent(this, NombreActivity.class);
             i.putExtra("servicio" , "Servicio 1");
             startActivity(i);
         }
         else if(v == btnServicio2){
-            Intent i = new Intent(this, MejoraActivity.class);
+            Intent i = new Intent(this, NombreActivity.class);
             i.putExtra("servicio" , "Servicio 2");
             startActivity(i);
         }
         else if(v == btnServicio3){
-            Intent i = new Intent(this, MejoraActivity.class);
+            Intent i = new Intent(this, NombreActivity.class);
             i.putExtra("servicio" , "Servicio 3");
             startActivity(i);
         }
         else if(v == btnServicio4){
-            Intent i = new Intent(this, MejoraActivity.class);
+            Intent i = new Intent(this, NombreActivity.class);
             i.putExtra("servicio" , "Servicio 4");
             startActivity(i);
         }

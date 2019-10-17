@@ -107,7 +107,7 @@ public class DetalleActivity extends AppCompatActivity implements View.OnClickLi
 
             cursor.close();
 
-            m = new Mail(getIntent().getExtras().getString("servicio"), mensaje);
+            m = new Mail(getIntent().getExtras().getString("nombre"), mensaje);
 
             String[] to = {"diexgox@gmail.com"};
 
@@ -136,6 +136,8 @@ public class DetalleActivity extends AppCompatActivity implements View.OnClickLi
                                 Toast.makeText(DetalleActivity.this, "Servicio Solicitado", Toast.LENGTH_LONG).show();
 
                                 Intent i = new Intent(DetalleActivity.this,GraciasActivity.class);
+
+                                i.putExtra("tipoPago", getIntent().getExtras().getString("tipoPago"));
                                 startActivity(i);
 
                             } else {

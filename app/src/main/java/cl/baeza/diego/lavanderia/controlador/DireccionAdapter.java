@@ -33,13 +33,13 @@ public class DireccionAdapter extends RecyclerView.Adapter<DireccionAdapter.Dire
     private List<Direccion> direccionList;
 
     private String servicio;
-    private String mejora;
+    //private String mejora;
     private String nombre;
 
     //getting the context and product list with constructor
-    public DireccionAdapter(Context mContext, List<Direccion> direccionList, String servicio, String mejora, String nombre) {
+    public DireccionAdapter(Context mContext, List<Direccion> direccionList, String servicio, String nombre) {
         this.servicio = servicio;
-        this.mejora = mejora;
+        //this.mejora = mejora;
         this.mContext = mContext;
         this.direccionList = direccionList;
         this.nombre = nombre;
@@ -83,7 +83,7 @@ public class DireccionAdapter extends RecyclerView.Adapter<DireccionAdapter.Dire
             public void onClick(View v) {
                 Intent i = new Intent(mContext,HorarioActivity.class);
                 i.putExtra("servicio", servicio);
-                i.putExtra("mejora" , mejora);
+                //i.putExtra("mejora" , mejora);
                 i.putExtra("nombre",nombre);
                 i.putExtra("ubicacion" , holder.tvDireccion.getText().toString());
                 mContext.startActivity(i);

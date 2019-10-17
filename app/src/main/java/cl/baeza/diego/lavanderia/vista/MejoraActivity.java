@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import cl.baeza.diego.lavanderia.R;
 import cl.baeza.diego.lavanderia.modelo.Nombre;
@@ -42,6 +43,7 @@ public class MejoraActivity extends AppCompatActivity implements View.OnClickLis
 
 
 
+        Toast.makeText(this, getIntent().getExtras().getString("direccion"), Toast.LENGTH_LONG).show();
 
     }
 
@@ -91,9 +93,12 @@ public class MejoraActivity extends AppCompatActivity implements View.OnClickLis
         else if(v == btnContinuar){
 
             //Arreglar paso de datos
-            Intent i = new Intent(MejoraActivity.this, NombreActivity.class);
-            i.putExtra("servicio" , getIntent().getExtras().getString("servicio"));
-
+            Intent i = new Intent(MejoraActivity.this, PagoActivity.class);
+            i.putExtra("servicio",getIntent().getExtras().getString("servicio"));
+            //i.putExtra("mejora",getIntent().getExtras().getString("mejora"));
+            i.putExtra("nombre", getIntent().getExtras().getString("nombre"));
+            i.putExtra("direccion", getIntent().getExtras().getString("direccion"));
+            i.putExtra("horario", getIntent().getExtras().getString("horario"));
 
             if(tvAgregado1.getVisibility() == View.VISIBLE && tvAgregado2.getVisibility() == View.INVISIBLE){
                 i.putExtra("mejora","Mejora 1");

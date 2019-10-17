@@ -13,7 +13,7 @@ public class PagoActivity extends AppCompatActivity implements View.OnClickListe
 
     Button btnEfectivo;
     Button btnCredito;
-    Button btnDebito;
+    Button btnTransferencia;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -22,11 +22,11 @@ public class PagoActivity extends AppCompatActivity implements View.OnClickListe
 
         btnEfectivo = findViewById(R.id.btnEfectivo);
         btnCredito = findViewById(R.id.btnCredito);
-        btnDebito = findViewById(R.id.btnDebito);
+        btnTransferencia = findViewById(R.id.btnTransferencia);
 
         btnEfectivo.setOnClickListener(this);
         btnCredito.setOnClickListener(this);
-        btnDebito.setOnClickListener(this);
+        btnTransferencia.setOnClickListener(this);
 
     }
 
@@ -54,14 +54,14 @@ public class PagoActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(i);
 
         }
-        else if(v == btnDebito){
+        else if(v == btnTransferencia){
             Intent i = new Intent(PagoActivity.this, DetalleActivity.class);
             i.putExtra("servicio",getIntent().getExtras().getString("servicio"));
             i.putExtra("mejora",getIntent().getExtras().getString("mejora"));
             i.putExtra("nombre",getIntent().getExtras().getString("nombre"));
             i.putExtra("direccion", getIntent().getExtras().getString("direccion"));
             i.putExtra("horario", getIntent().getExtras().getString("horario"));
-            i.putExtra("tipoPago","Debito");
+            i.putExtra("tipoPago","Transferencia");
             startActivity(i);
 
         }

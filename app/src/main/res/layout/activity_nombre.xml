@@ -2,76 +2,87 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary">
+    android:background="@color/grisClaro">
+
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/background_action_bar"
+        android:id="@+id/toolbar"
+        android:elevation="20dp"
+        android:layout_centerHorizontal="true"
+        >
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/ic_logo"
+            android:layout_gravity="center"/>
+
+
+
+    </android.support.v7.widget.Toolbar>
 
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="22dp"
-        android:layout_marginEnd="11dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/titulo_nombre"
-        android:textColor="@color/white"
+        android:textColor="@color/colorPrimary"
         android:textSize="26sp"
-        android:textStyle="bold"
+        android:fontFamily="sans-serif"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/nombres"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <ImageButton
         android:id="@+id/btnAgregarN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="10dp"
-        android:backgroundTint="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/rvNombre"
+        android:background="@drawable/background_circle_primary"
+        android:elevation="5dp"
+        android:padding="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        app:srcCompat="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13"
-        app:srcCompat="@drawable/ic_add" />
+        android:clickable="true"/>
 
     <TextView
         android:id="@+id/tvSinNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="15dp"
         android:text="@string/no_se_ha_agregado_ningun_nombre"
-        android:textColor="@color/white"
+        android:textColor="@color/colorPrimary"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAgregarN" />
+        android:fontFamily="sans-serif"
+        app:layout_constraintEnd_toEndOf="@+id/rvNombre"
+        app:layout_constraintStart_toStartOf="@+id/rvNombre"
+        app:layout_constraintTop_toTopOf="@+id/rvNombre" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvNombre"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAgregarN">
+        app:layout_constraintTop_toBottomOf="@+id/textView13">
 
     </android.support.v7.widget.RecyclerView>
+
+
 </android.support.constraint.ConstraintLayout>

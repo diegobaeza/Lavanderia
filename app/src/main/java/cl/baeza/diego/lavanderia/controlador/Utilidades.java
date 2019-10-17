@@ -28,6 +28,7 @@ public class Utilidades {
     public static final String TABLA_NOMBRE = "nombre";
 
     public static final String CAMPO_NOMBRE = "nombre";
+    public static final String CAMPO_TELEFONO_ALTERNATIVO = "telefono_alternativo";
 
     public static final String CREAR_TABLA_NOMBRE = "CREATE TABLE " + TABLA_NOMBRE + "("+ CAMPO_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "+CAMPO_NOMBRE +" TEXT)";
 

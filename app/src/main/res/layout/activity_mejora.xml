@@ -1,85 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary">
+    android:background="@color/grisClaro">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/background_action_bar"
+        android:elevation="20dp">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@mipmap/ic_logo" />
+
+
+    </android.support.v7.widget.Toolbar>
 
     <TextView
         android:id="@+id/tvMejoraServ"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="83dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="75dp"
+        android:fontFamily="sans-serif"
         android:text="@string/mejoras_servicio"
-        android:textColor="@color/white"
+        android:textColor="@color/colorPrimary"
         android:textSize="25sp"
+        android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
-    <ImageButton
-        android:id="@+id/btnMejora1"
-        android:layout_width="wrap_content"
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
         android:layout_marginTop="49dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:src="@drawable/ic_mejora1"
-        android:textColor="@color/white"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMejoraServ" />
+        app:layout_constraintTop_toBottomOf="@+id/tvMejoraServ">
 
-    <ImageButton
-        android:id="@+id/btnMejora2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="49dp"
-        android:layout_marginEnd="50dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:src="@drawable/ic_mejora2"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMejoraServ" />
+
+        <LinearLayout
+            android:id="@+id/bloqueServicio1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/background_degraded">
+
+
+
+            <ImageButton
+                android:id="@+id/btnMejora1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_degraded"
+                android:src="@drawable/ic_mejora1"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tvAgregado1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="5dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/agregado"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/btnMejora1" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/bloqueServicio2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnMejora2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_degraded"
+                android:src="@drawable/ic_mejora2"
+                android:textColor="@color/white" />
+
+
+            <TextView
+                android:id="@+id/tvAgregado2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif"
+                android:text="@string/agregado"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/btnMejora2" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
 
     <Button
         android:id="@+id/btnContinuar"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="@color/colorPrimaryDark"
+        android:fontFamily="sans-serif"
         android:text="@string/continuar_sm"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/tvAgregado1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/agregado"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMejora1" />
-
-    <TextView
-        android:id="@+id/tvAgregado2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="80dp"
-        android:text="@string/agregado"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMejora2" />
 
 </android.support.constraint.ConstraintLayout>

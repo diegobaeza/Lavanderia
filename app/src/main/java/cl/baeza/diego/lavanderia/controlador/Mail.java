@@ -48,12 +48,12 @@ public class Mail extends javax.mail.Authenticator {
         _sport = "465"; // default socketfactory port
 
         _user = "diexgox@gmail.com"; // username
-        _pass = "Pokemones1"; // password
+        _pass = "Pokemones1-2019"; // password
         _from = "diexgox@gmail.com"; // email sent from
         _subject = subject; // email subject
         _body = body; // email body
 
-        _debuggable = false; // debug mode on or off - default off
+        _debuggable = true; // debug mode on or off - default off
         _auth = true; // smtp authentication - default on
 
         _multipart = new MimeMultipart();

@@ -52,7 +52,7 @@ public class NombreActivity extends AppCompatActivity implements View.OnClickLis
 
 
         servicio = getIntent().getExtras().getString("servicio");
-        mejora = getIntent().getExtras().getString("mejora");
+        //mejora = getIntent().getExtras().getString("mejora");
 
 
         nombreList = cargarNombres();

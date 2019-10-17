@@ -3,100 +3,134 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary">
+    android:background="@color/grisClaro">
 
-    <Button
-        android:id="@+id/btnSelecUbicacion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="85dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginBottom="15dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:drawableTop="@drawable/ic_maps"
-        android:text="@string/seleccione_ubicacion"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/background_action_bar"
+        android:id="@+id/toolbar"
+        android:elevation="20dp"
+        android:layout_centerHorizontal="true"
+        >
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/ic_logo"
+            android:layout_gravity="center"/>
+
+
+
+    </android.support.v7.widget.Toolbar>
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="65dp"
+        android:id="@+id/map"
+        tools:context=".UbicacionActivity"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
-    <TextView
-        android:id="@+id/textView2"
+
+
+    <android.support.v7.widget.AppCompatImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="10dp"
-        android:text="@string/direccion"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/rvDireccion"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.45" />
+        android:background="@drawable/ic_pin"
+        app:layout_constraintBottom_toBottomOf="@+id/map"
+        app:layout_constraintEnd_toEndOf="@+id/map"
+        app:layout_constraintStart_toStartOf="@+id/map"
+        app:layout_constraintTop_toTopOf="@+id/map" />
+
+
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="62dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="62dp"
         android:text="@string/titUbicacion"
-        android:textColor="@color/white"
+        android:textColor="@color/colorPrimary"
         android:textSize="26sp"
-        android:textStyle="bold"
+
+        android:fontFamily="sans-serif"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+        app:layout_constraintTop_toBottomOf="@id/map" />
 
 
     <ImageButton
         android:id="@+id/btnAgregarD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="10dp"
-        android:backgroundTint="@color/colorPrimary"
+        android:background="@drawable/background_circle_primary"
+        android:padding="15dp"
+        android:elevation="10dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
         android:src="@drawable/ic_add"
-        app:layout_constraintBottom_toTopOf="@+id/rvDireccion"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.45" />
+        android:clickable="true" />
 
     <TextView
         android:id="@+id/tvSinDireccion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif"
         android:text="@string/no_ha_agregado_ninguna_direccion"
-        android:textColor="@color/white"
+        android:textColor="@color/colorPrimary"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintEnd_toEndOf="@+id/rvDireccion"
+        app:layout_constraintStart_toStartOf="@+id/rvDireccion"
+        app:layout_constraintTop_toTopOf="@+id/rvDireccion" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvDireccion"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnSelecUbicacion"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAgregarD">
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
 
     </android.support.v7.widget.RecyclerView>
 
+    <Button
+        android:id="@+id/btnSeleccionarPosicion"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Seleccionar"
+        android:textSize="12sp"
+        android:maxHeight="0dp"
+        android:background="@drawable/background_button_primary"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/map"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>

@@ -29,14 +29,14 @@ public class NombreAdapter extends RecyclerView.Adapter<NombreAdapter.NombreView
     private List<Nombre> nombreList;
 
     private String servicio;
-    private String mejora;
+    //private String mejora;
 
 
     public NombreAdapter(Context mContext, List<Nombre> nombreList, String servicio, String mejora) {
         this.mContext = mContext;
         this.nombreList = nombreList;
         this.servicio = servicio;
-        this.mejora = mejora;
+        //this.mejora = mejora;
     }
 
 
@@ -77,7 +77,7 @@ public class NombreAdapter extends RecyclerView.Adapter<NombreAdapter.NombreView
             public void onClick(View v) {
                 Intent i = new Intent(mContext,UbicacionActivity.class);
                 i.putExtra("servicio", servicio);
-                i.putExtra("mejora" , mejora);
+                //i.putExtra("mejora" , mejora);
                 i.putExtra("nombre" , holder.tvNombre.getText().toString());
                 mContext.startActivity(i);
 
