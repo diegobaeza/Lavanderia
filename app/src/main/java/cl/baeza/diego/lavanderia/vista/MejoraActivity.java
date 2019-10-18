@@ -3,10 +3,12 @@ package cl.baeza.diego.lavanderia.vista;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +23,8 @@ public class MejoraActivity extends AppCompatActivity implements View.OnClickLis
     Button btnContinuar;
     TextView tvAgregado1;
     TextView tvAgregado2;
+    LinearLayout llbloqueServicio1;
+    LinearLayout llbloqueServicio2;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,6 +37,9 @@ public class MejoraActivity extends AppCompatActivity implements View.OnClickLis
         tvAgregado1 = findViewById(R.id.tvAgregado1);
         tvAgregado2 = findViewById(R.id.tvAgregado2);
 
+        llbloqueServicio1 = findViewById(R.id.bloqueServicio1);
+        llbloqueServicio2 = findViewById(R.id.bloqueServicio2);
+
         tvAgregado1.setVisibility(View.INVISIBLE);
         tvAgregado2.setVisibility(View.INVISIBLE);
 
@@ -43,7 +50,6 @@ public class MejoraActivity extends AppCompatActivity implements View.OnClickLis
 
 
 
-        Toast.makeText(this, getIntent().getExtras().getString("direccion"), Toast.LENGTH_LONG).show();
 
     }
 
@@ -57,12 +63,14 @@ public class MejoraActivity extends AppCompatActivity implements View.OnClickLis
             if(tvAgregado1.getVisibility() == View.INVISIBLE){
                 tvAgregado1.setVisibility(View.VISIBLE);
 
+                llbloqueServicio1.setBackground(ContextCompat.getDrawable(this,R.drawable.button_selected));
                 if(tvAgregado1.getVisibility() == View.VISIBLE || tvAgregado2.getVisibility() == View.VISIBLE){
                     btnContinuar.setText(R.string.continuar);
                 }
 
             }else{
                 tvAgregado1.setVisibility(View.INVISIBLE);
+                llbloqueServicio1.setBackground(ContextCompat.getDrawable(this,R.drawable.background_button_primary));
 
                 if(tvAgregado1.getVisibility() == View.INVISIBLE && tvAgregado2.getVisibility() == View.INVISIBLE){
                     btnContinuar.setText(R.string.continuar_sm);
@@ -76,6 +84,9 @@ public class MejoraActivity extends AppCompatActivity implements View.OnClickLis
             if(tvAgregado2.getVisibility() == View.INVISIBLE){
                 tvAgregado2.setVisibility(View.VISIBLE);
 
+
+                llbloqueServicio2.setBackground(ContextCompat.getDrawable(this,R.drawable.button_selected));
+
                 if(tvAgregado1.getVisibility() == View.VISIBLE || tvAgregado2.getVisibility() == View.VISIBLE){
                     btnContinuar.setText(R.string.continuar);
                 }
@@ -83,11 +94,11 @@ public class MejoraActivity extends AppCompatActivity implements View.OnClickLis
             }else{
                 tvAgregado2.setVisibility(View.INVISIBLE);
 
+                llbloqueServicio2.setBackground(ContextCompat.getDrawable(this,R.drawable.background_button_primary));
                 if(tvAgregado1.getVisibility() == View.INVISIBLE && tvAgregado2.getVisibility() == View.INVISIBLE){
                     btnContinuar.setText(R.string.continuar_sm);
                 }
             }
-
 
         }
         else if(v == btnContinuar){
@@ -113,10 +124,8 @@ public class MejoraActivity extends AppCompatActivity implements View.OnClickLis
                 i.putExtra("mejora", "Sin Mejora");
             }
 
-
-
-
             startActivity(i);
+            overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
 
         }
     }

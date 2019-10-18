@@ -58,7 +58,8 @@
             android:layout_marginEnd="20dp"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
-            android:background="@drawable/background_degraded">
+            android:background="@drawable/background_button_primary"
+            >
 
 
 
@@ -66,7 +67,7 @@
                 android:id="@+id/btnMejora1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/background_degraded"
+                android:background="#00000000"
                 android:src="@drawable/ic_mejora1"
                 android:textColor="@color/white" />
 
@@ -79,10 +80,11 @@
                 android:fontFamily="sans-serif"
                 android:text="@string/agregado"
                 android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintTop_toBottomOf="@+id/btnMejora1" />
+
 
         </LinearLayout>
 
@@ -94,13 +96,14 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@drawable/background_button_primary">
 
             <ImageButton
                 android:id="@+id/btnMejora2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/background_degraded"
+                android:background="#00000000"
                 android:src="@drawable/ic_mejora2"
                 android:textColor="@color/white" />
 
@@ -113,7 +116,7 @@
                 android:fontFamily="sans-serif"
                 android:text="@string/agregado"
                 android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintTop_toBottomOf="@+id/btnMejora2" />

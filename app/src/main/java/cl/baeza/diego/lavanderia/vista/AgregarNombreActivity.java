@@ -5,7 +5,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.telecom.Call;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -21,10 +23,14 @@ public class AgregarNombreActivity extends AppCompatActivity implements View.OnC
     Button btnListoN;
 
     Nombre nombreEdit;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar_nombre);
+
+
+
 
         etNombre = findViewById(R.id.etNombre);
         btnListoN = findViewById(R.id.btnListoN);
@@ -68,6 +74,21 @@ public class AgregarNombreActivity extends AppCompatActivity implements View.OnC
 
             finish();
 
+
+            overridePendingTransition(R.anim.nothing, R.anim.slide_to_bottom);
+
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.nothing, R.anim.slide_to_bottom);
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+
     }
 }

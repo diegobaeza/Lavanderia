@@ -88,6 +88,9 @@ public class DireccionAdapter extends RecyclerView.Adapter<DireccionAdapter.Dire
                 i.putExtra("ubicacion" , holder.tvDireccion.getText().toString());
                 mContext.startActivity(i);
 
+
+                ((Activity)  mContext).overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+
             }
         });
 
@@ -114,6 +117,9 @@ public class DireccionAdapter extends RecyclerView.Adapter<DireccionAdapter.Dire
                 i.putExtra("direccion", direccion);
                 i.putExtra("id", direccion.getId());
                 mContext.startActivity(i);
+
+                ((Activity) mContext).overridePendingTransition(R.anim.slide_from_bottom, R.anim.nothing);
+
             }
         });
 

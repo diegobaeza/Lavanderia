@@ -195,6 +195,8 @@ public class UbicacionActivity extends AppCompatActivity implements View.OnClick
                 i.putExtra("editando", 0);
                 startActivity(i);
                 onStop();
+
+                overridePendingTransition(R.anim.slide_from_bottom, R.anim.nothing);
                 break;
             case R.id.btnSeleccionarPosicion:
 
@@ -226,6 +228,8 @@ public class UbicacionActivity extends AppCompatActivity implements View.OnClick
                 startActivityForResult(a,1);
                 onStop();
 
+                overridePendingTransition(R.anim.slide_from_bottom, R.anim.nothing);
+
                 break;
         }
 
@@ -249,6 +253,7 @@ public class UbicacionActivity extends AppCompatActivity implements View.OnClick
                 i.putExtra("nombre",nombre);
                 i.putExtra("ubicacion" , direccion);
                 startActivity(i);
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             }
         }
     }

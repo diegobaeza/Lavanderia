@@ -44,21 +44,29 @@ public class ServiciosActivity extends AppCompatActivity implements View.OnClick
             Intent i = new Intent(this, NombreActivity.class);
             i.putExtra("servicio" , "Servicio 1");
             startActivity(i);
+
+            overridePendingTransition(R.anim.slide_from_right, R.anim.nothing);
         }
         else if(v == btnServicio2){
             Intent i = new Intent(this, NombreActivity.class);
             i.putExtra("servicio" , "Servicio 2");
             startActivity(i);
+
+            overridePendingTransition(R.anim.slide_from_right, R.anim.nothing);
         }
         else if(v == btnServicio3){
             Intent i = new Intent(this, NombreActivity.class);
             i.putExtra("servicio" , "Servicio 3");
             startActivity(i);
+
+            overridePendingTransition(R.anim.slide_from_right, R.anim.nothing);
         }
         else if(v == btnServicio4){
             Intent i = new Intent(this, NombreActivity.class);
             i.putExtra("servicio" , "Servicio 4");
             startActivity(i);
+
+            overridePendingTransition(R.anim.slide_from_right, R.anim.nothing);
         }
     }
 }

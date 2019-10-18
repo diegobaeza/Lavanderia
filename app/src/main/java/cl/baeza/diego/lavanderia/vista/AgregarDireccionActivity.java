@@ -172,13 +172,23 @@ public class AgregarDireccionActivity extends AppCompatActivity implements View.
                 setResult(RESULT_OK, resultIntent);
                 finish();
 
+                overridePendingTransition(R.anim.nothing, R.anim.slide_to_bottom);
+
             }else{
 
             }
 
             finish();
 
+            overridePendingTransition(R.anim.nothing, R.anim.slide_to_bottom);
+
 
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.nothing, R.anim.slide_to_bottom);;
     }
 }

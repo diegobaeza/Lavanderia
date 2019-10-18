@@ -23,9 +23,6 @@ public class HorarioActivity extends AppCompatActivity implements View.OnClickLi
     private RadioButton rbHorario3;
 
 
-
-
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,8 +69,9 @@ public class HorarioActivity extends AppCompatActivity implements View.OnClickLi
             i.putExtra("horario", horario);
 
 
-            Toast.makeText(this, getIntent().getExtras().getString("ubicacion"), Toast.LENGTH_LONG).show();
             startActivity(i);
+
+            overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
 
 
         }

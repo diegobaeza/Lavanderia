@@ -95,9 +95,17 @@ public class NombreActivity extends AppCompatActivity implements View.OnClickLis
             i.putExtra("editando", 0);
             startActivity(i);
             onStop();
+            overridePendingTransition(R.anim.slide_from_bottom, R.anim.nothing);
         }
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.nothing, R.anim.slide_to_right);
+    }
+
 
     public ArrayList<Nombre> cargarNombres(){
         ConexionSQLiteHelper conn = new ConexionSQLiteHelper(NombreActivity.this, Utilidades.NOMBRE_BD, null, Utilidades.VERSION_BD);

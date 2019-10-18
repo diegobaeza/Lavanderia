@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.annotation.Nullable;
@@ -14,6 +15,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import br.com.simplepass.loading_button_lib.customViews.CircularProgressButton;
 import cl.baeza.diego.lavanderia.R;
 import cl.baeza.diego.lavanderia.controlador.Mail;
 import cl.baeza.diego.lavanderia.controlador.Utilidades;
@@ -21,7 +23,8 @@ import cl.baeza.diego.lavanderia.db.ConexionSQLiteHelper;
 
 public class DetalleActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button btnSolicitar;
+    CircularProgressButton btnSolicitar;
+
 
     TextView tvNombre;
     TextView tvTelefono;
@@ -81,8 +84,74 @@ public class DetalleActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View v) {
         if(v == btnSolicitar){
+            AsyncTask<String,String,String> enviarEmail = new AsyncTask<String, String, String>() {
+                @Override
+                protected String doInBackground(String... params) {
+                    try {
 
-            pdialog = ProgressDialog.show(DetalleActivity.this,"Espere","Enviando...",true);
+                        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+                        StrictMode.setThreadPolicy(policy);
+
+
+                        ConexionSQLiteHelper conn = new ConexionSQLiteHelper(DetalleActivity.this,"usuarios",null,1);
+                        SQLiteDatabase db = conn.getReadableDatabase();
+
+                        String[] parametros = {"1"};
+                        String[] campos = {Utilidades.CAMPO_TELEFONO};
+
+                        Cursor cursor = db.query(Utilidades.TABLA_USUARIO, campos, Utilidades.CAMPO_ID + "=?",parametros,null,null,null);
+                        cursor.moveToFirst();
+
+                        String mensaje = "Nombre: "+ getIntent().getExtras().getString("nombre") +
+                                "\n\nTelefono: " + cursor.getString(0) +
+                                "\n\nServicio: " + getIntent().getExtras().getString("servicio") +
+                                "\n\nMejora: " + getIntent().getExtras().getString("mejora") +
+                                "\n\nDireccion: " + getIntent().getExtras().getString("direccion") +
+                                "\n\nHorario: " + getIntent().getExtras().getString("horario") +
+                                "\n\nTipo de Pago: "+ getIntent().getExtras().getString("tipoPago");
+
+                        cursor.close();
+
+                        m = new Mail(getIntent().getExtras().getString("nombre"), mensaje);
+
+                        String[] to = {"diexgox@gmail.com"};
+
+                        m.setTo(to);
+
+                        enviado = m.send();
+
+
+                    }catch (Exception ex){
+                        ex.printStackTrace();
+                    }
+                    return "done";
+                }
+
+
+                @Override
+                protected void onPostExecute(String s) {
+                    if(s.equals("done")){
+                        if(enviado) {
+                            Toast.makeText(DetalleActivity.this, "Servicio Solicitado", Toast.LENGTH_LONG).show();
+
+                            Intent i = new Intent(DetalleActivity.this,GraciasActivity.class);
+
+                            i.putExtra("tipoPago", getIntent().getExtras().getString("tipoPago"));
+                            startActivity(i);
+                            finish();
+                            overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+
+
+                        } else {
+                            Toast.makeText(DetalleActivity.this, "Email no fue enviado.", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }
+            };
+
+            btnSolicitar.startAnimation();
+            enviarEmail.execute();
+            /*pdialog = ProgressDialog.show(DetalleActivity.this,"Espere","Enviando...",true);
 
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
@@ -139,6 +208,8 @@ public class DetalleActivity extends AppCompatActivity implements View.OnClickLi
 
                                 i.putExtra("tipoPago", getIntent().getExtras().getString("tipoPago"));
                                 startActivity(i);
+                                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+
 
                             } else {
                                 Toast.makeText(DetalleActivity.this, "Email no fue enviado.", Toast.LENGTH_LONG).show();
@@ -146,7 +217,7 @@ public class DetalleActivity extends AppCompatActivity implements View.OnClickLi
                         }
                     });
                 }
-            }).start();
+            }).start();*/
 
         }
     }

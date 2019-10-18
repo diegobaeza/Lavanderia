@@ -1,5 +1,6 @@
 package cl.baeza.diego.lavanderia.controlador;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -81,6 +82,9 @@ public class NombreAdapter extends RecyclerView.Adapter<NombreAdapter.NombreView
                 i.putExtra("nombre" , holder.tvNombre.getText().toString());
                 mContext.startActivity(i);
 
+                ((Activity)  mContext).overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+
+
             }
         });
 
@@ -92,6 +96,9 @@ public class NombreAdapter extends RecyclerView.Adapter<NombreAdapter.NombreView
                 i.putExtra("nombre", nombre);
                 i.putExtra("id", nombre.getId());
                 mContext.startActivity(i);
+
+                ((Activity) mContext).overridePendingTransition(R.anim.slide_from_bottom, R.anim.nothing);
+
             }
         });
     }

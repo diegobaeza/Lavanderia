@@ -41,6 +41,8 @@ public class PagoActivity extends AppCompatActivity implements View.OnClickListe
             i.putExtra("horario", getIntent().getExtras().getString("horario"));
             i.putExtra("tipoPago","Efectivo");
             startActivity(i);
+            overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+
 
         }
         else if(v == btnCredito){
@@ -52,6 +54,8 @@ public class PagoActivity extends AppCompatActivity implements View.OnClickListe
             i.putExtra("horario", getIntent().getExtras().getString("horario"));
             i.putExtra("tipoPago","Credito");
             startActivity(i);
+            overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+
 
         }
         else if(v == btnTransferencia){
@@ -63,6 +67,8 @@ public class PagoActivity extends AppCompatActivity implements View.OnClickListe
             i.putExtra("horario", getIntent().getExtras().getString("horario"));
             i.putExtra("tipoPago","Transferencia");
             startActivity(i);
+            overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+
 
         }
     }

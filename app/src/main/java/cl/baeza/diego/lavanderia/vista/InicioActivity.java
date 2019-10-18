@@ -33,6 +33,7 @@ public class InicioActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_inicio);
 
 
+
         vvInicio = findViewById(R.id.vvInicio);
         btnEntrar = findViewById(R.id.btnEntrar);
         imgLogo = findViewById(R.id.logoimagen);
@@ -62,6 +63,7 @@ public class InicioActivity extends AppCompatActivity implements View.OnClickLis
         if(v == btnEntrar){
             Intent i = new Intent(InicioActivity.this,NumeroActivity.class);
             startActivity(i);
+            overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             finish();
         }
     }

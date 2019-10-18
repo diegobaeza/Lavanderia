@@ -28,15 +28,14 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <fragment
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginTop="65dp"
         android:id="@+id/map"
         tools:context=".UbicacionActivity"
         android:name="com.google.android.gms.maps.SupportMapFragment"
-
+        android:elevation="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,6 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/ic_pin"
+        android:elevation="11dp"
         app:layout_constraintBottom_toBottomOf="@+id/map"
         app:layout_constraintEnd_toEndOf="@+id/map"
         app:layout_constraintStart_toStartOf="@+id/map"
@@ -123,6 +123,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:elevation="11dp"
         android:text="Seleccionar"
         android:textSize="12sp"
         android:maxHeight="0dp"
